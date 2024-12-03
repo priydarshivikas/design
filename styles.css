@@ -1,0 +1,278 @@
+/* Root Variables */
+:root {
+  --primary-color: #ff6b82;
+  --secondary-color: #c8c8c8;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --muted-text-color: #c8c8c8;
+  --font-family: Arial, sans-serif;
+
+  /* Font Sizes */
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+
+  /* Border Radius */
+  --border-radius: 4px;
+
+  /* Shadows */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.contentContainer {
+  width: 80%;
+  height: 80vh;
+}
+.eight {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 1px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 16px 0;
+    grid-gap: 22px;
+    color: #ff6b82;
+    font-weight: 600;
+
+    &:after,
+    &:before {
+      content: " ";
+      display: block;
+      border-bottom: 2px solid #c8c8c8;
+    }
+  }
+}
+
+/* Radio Button Styles */
+input[type="radio"] {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Radio Container Styles */
+.radio-Container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 35px;
+  border: 2px solid var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.radio-Container.expanded {
+  padding-bottom: 40px;
+}
+
+.inner-radio-Container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inner-radio-left-Container {
+  display: flex;
+  align-items: center;
+}
+
+.radio-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.radio-text-inner {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--text-color);
+  line-height: 1.2;
+}
+
+.radio-text-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75px;
+  height: 20px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+}
+
+.radio-paragraph {
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.inner-radio-right-Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-span {
+  font-size: var(--font-size-md);
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.final-price-span {
+  font-size: var(--font-size-sm);
+  color: var(--muted-text-color);
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+/* Dropdown Styles */
+.hidden {
+  display: none;
+}
+
+.dropdown-menu {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+}
+
+.dropdown-grid {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+#dropdown-number {
+  margin-top: 12px;
+}
+
+select {
+  width: 150px;
+  height: 40px;
+  padding: 5px 10px;
+  font-size: var(--font-size-md);
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  background-color: #f9f9f9;
+  color: var(--text-color);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  background-color: var(--background-color);
+}
+
+label {
+  font-size: var(--font-size-md);
+}
+
+/* Card and Button Styles */
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin-top: 35px;
+}
+
+.free-delivery {
+  font-size: var(--font-size-md);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.total-price,
+.price-span {
+  font-size: var(--font-size-md);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  background-color: var(--primary-color);
+}
+
+.btn {
+  background-color: var(--primary-color);
+  padding: 20px;
+  border: none;
+  color: var(--background-color);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+/* Miscellaneous */
+.powered-by {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+  color: var(--muted-text-color);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 25px;
+  border: 2px solid var(--secondary-color);
+}
+
+.legend {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  text-align: right;
+}
